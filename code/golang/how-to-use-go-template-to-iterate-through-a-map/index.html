@@ -122,7 +122,7 @@
         }</code></pre>
       
       <p>
-        How do we iterate through the map in our template and display each element of our struct Employees? We make use of <b>range</b> and <b>index</b>.
+        How do we iterate through the map in our template and display each element of our struct Employees? We make use of <b>range</b>.
       </p>
   
       <pre class="mt-5 mb-5"><code class="language-markup">html := `{{define "departments"}}
@@ -135,7 +135,7 @@
 {{end}}`</code></pre>
      
       <p>
-        We use <b>range $key, $value := .Employees</b> to get all the keys and values of the Employees map. We can then use $value to reference the Employee struct directly.
+        We use <b>range $key, $value := .Employees</b> to get all the keys and values of the Employees map. We can then use <b>$value</b> to reference the Employee struct directly.
       </p>
   
       <pre class="mt-5 mb-5"><code class="language-handlebars">{{$value.FirstName}}</code></pre>
