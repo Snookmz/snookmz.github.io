@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://heathsnoek.me/code/golang/how-to-use-go-template-to-iterate-through-a-map/</loc>
-    <lastmod>2022-04-02T05:57:12+11:00</lastmod>
-  </url><url>
     <loc>https://heathsnoek.me/</loc>
+    <lastmod>2022-06-13T14:24:39+10:00</lastmod>
+  </url><url>
+    <loc>https://heathsnoek.me/salesandmarketing/uks-most-hated-sales-trainer/</loc>
+    <lastmod>2022-06-13T14:24:39+10:00</lastmod>
+  </url><url>
+    <loc>https://heathsnoek.me/code/golang/how-to-use-go-template-to-iterate-through-a-map/</loc>
     <lastmod>2022-04-02T05:57:12+11:00</lastmod>
   </url><url>
     <loc>https://heathsnoek.me/books/peak-performance-summary/</loc>
