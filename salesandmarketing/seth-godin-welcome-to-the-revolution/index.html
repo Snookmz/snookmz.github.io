@@ -58,7 +58,7 @@
     <div class="col-12 col-lg-7 col-xl-6">
       <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/code">Code</a></li><li class="breadcrumb-item"><a href="/code/golang">Golang</a></li><li class="breadcrumb-item">How to Use Go Template to Iterate Through a Map</li></ol>
+    <li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/salesandmarketing">Salesandmarketing</a></li><li class="breadcrumb-item">Seth Godin Welcome to the Revolution</li></ol>
 </nav>
 
     </div>
@@ -67,105 +67,41 @@
   
   <div class="row justify-content-center">
     <div class="col-11 col-sm-9 col-md-8 col-lg-6 col-xl-6">
-      
-<div class="container-fluid ns-container-post-html">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <h1>
-        How to use Go html/template to iterate through a map
-      </h1>
-      
-      <h4>
-        In this example we'll use Golang's html/template package and iterate through a map in our html template.
-      </h4>
-      
-      <p>
-        You can check out a working example of this code <a href="https://go.dev/play/p/E_fJIWvX4nM" target="_blank">in the Go Playground</a>.
-      </p>
-      
-      <p>
-        Let's say we have the following structs:
-      </p>
-  
-      <pre class="mt-5 mb-5"><code class="language-go">	type Employee struct {
-		FirstName string
-		LastName  string
-		Email     string
-	}
+      <ul>
+<li>We are living through a revolution because of the pandemic.</li>
+<li>Revolutions destroy the &lsquo;perfect&rsquo; and enable the impossible. We are all living virtually now.</li>
+<li>&lsquo;Perfect&rsquo; - means you play the game and you&rsquo;re winning well enough to play the game. Telegraph was perfect before the telephone. People dealing with perfect usually say &lsquo;no&rsquo; to the new technology. Yahoo had a chance to buy Google for 10 mil.</li>
+<li>Management is not the same as leadership. Management is making things a little big better, cheaper in a reliable way.</li>
+<li>Leadership is voluntary, you can choose to lead or choose to follow. Leadership is voluntarily signing up to change the game. Leadership &lsquo;might not work&rsquo;. If you&rsquo;re sure it&rsquo;s going to work then it is management.</li>
+<li>Leadership is exploring the edges, finding problems and solving them.</li>
+<li>Resistance is our fear of being wrong, our fear of change.</li>
+<li>Leaders want to change the game.</li>
+<li>On a good day, what happened because you went to work? If you are watching this, you are in a position which has leverage.</li>
+<li>A good day is a day you make change happen. Who are you seeking to change?</li>
+<li>Are you &lsquo;enrolled&rsquo; in the journey.</li>
+<li>Most people who do Udemy courses do not finish them. There&rsquo;s no prize to finish - they feel good because they paid the money to watch the videos.</li>
+<li>&lsquo;Enrolled&rsquo; so frustrated with lack of forward motion that it&rsquo;s as if you&rsquo;re not being paid on time.</li>
+<li>Gradual changes and shifts in the culture end up leading to the long term transformation that we seek.</li>
+<li>Where is the authority, who will let me do this? This is not leadership. We are afraid of responsibility. Authority is hard to find, responsibility is easy to get.</li>
+<li>Decide you want to change the game. Choose your project and that will change your future.</li>
+<li>Choose your project choose your future. Seth missed the Internet, he thought it wouldn&rsquo;t work.</li>
+<li>Jugglers are good at catching the ball.</li>
+<li>Juggling has nothing to do with catching, it has to do with throwing. Get good at throwing.</li>
+<li>Get comfortable with the ball dropping to the ground, then you&rsquo;ll get good at throwing.</li>
+<li>Most people spend all the time getting good at trying to catch.</li>
+<li>Relentless curiosity.</li>
+<li>Agility doesn&rsquo;t mean you always land. When you&rsquo;re wrong you&rsquo;re still in the game.</li>
+<li>Do work that matters for people who care.</li>
+<li>People often know the solution to the problem, they just don&rsquo;t like the cost.</li>
+<li>Your boss won&rsquo;t let you do something big and new because if you succeed you&rsquo;ll take responsibility and if you fail your boss takes the blame.
+<ul>
+<li>Don&rsquo;t ask for permission, just make small changes to improve things and if it fails take the blame and if it succeeds give away responsibility</li>
+</ul>
+</li>
+<li>Discover what works and what doesn&rsquo;t. It requires us to take responsibility. Do small beneficial and brave acts.</li>
+<li>If you chose your projects you chose your future. How can I choose?</li>
+</ul>
 
-	type Content struct {
-		Department   string
-		Employees map[string]Employee
-	}</code></pre>
-      
-      <p>
-        The Content struct is what we want to display in our html template. It contains a Department string and a map containing Employees.
-      </p>
-
-      <p>
-        Let's populate the struct with one department and employees:
-      </p>
-  
-      <pre class="mt-5 mb-5"><code class="language-go">var c Content
-	c.Department = "Sales"
-	c.Employees = make(map[string]Employee)
-	c.Employees["bSmith"] = Employee{
-        FirstName: "Bob",
-        LastName: "Smith",
-        Email: "bob@smith.com"
-        }
-	c.Employees["mBrown"] = Employee{
-        FirstName: "Michael",
-        LastName: "Brown",
-        Email: "michael@brown.com"
-        }
-	c.Employees["hTennenbaum"] = Employee{
-        FirstName: "Harry",
-        LastName: "Tennenbaum",
-        Email: "harry@tennenbaum.com"
-        }</code></pre>
-      
-      <p>
-        How do we iterate through the map in our template and display each element of our struct Employees? We make use of <b>range</b>.
-      </p>
-  
-      <pre class="mt-5 mb-5"><code class="language-markup">html := `{{define "departments"}}
-&lt;ul>
-  &lt;li>{{.Department}}&lt;/li>
-  {{range $key, $value := .Employees}}
-    &lt;li>{{$value.FirstName}} {{(index $.Employees $key).LastName}} {{$value.Email}}&lt;/li>
-  {{end}}
-&lt;/ul>
-{{end}}`</code></pre>
-     
-      <p>
-        We use <b>range $key, $value := .Employees</b> to get all the keys and values of the Employees map. We can then use <b>$value</b> to reference the Employee struct directly.
-      </p>
-  
-      <pre class="mt-5 mb-5"><code class="language-handlebars">{{$value.FirstName}}</code></pre>
-      
-      <p>
-        We can also use the <b>index</b> keyword to reference the Employee struct using the $key as our key:
-      </p>
-  
-      <pre class="mt-5 mb-5"><code class="language-handlebars">{{(index $.Employees $key).FirstName}}</code></pre>
-      
-      <p>
-        Using <b>index</b> is the equivalent of writing this in Go:
-      </p>
-  
-  
-      <pre class="mt-5 mb-5"><code class="language-go">c.Employees["someKey"].FirstName</code></pre>
-  
-      <p>
-        If you have any questions with this solution, or you can see a mistake I have made, please DM me on <a href="https://twitter.com/heathsnoek" target="_blank">twitter</a>.
-      </p>
-      
-    </div>
-  </div>
-  
-  
-</div>
     </div>
   </div>
   
